@@ -1,0 +1,9 @@
+strict c100 runs=10 symbols=81 real=-2.907 shuffled median=-5.195 max=-3.693 >=real 0/1000
+strict c108 runs=23 symbols=255 real=-3.550 shuffled median=-5.271 max=-4.331 >=real 0/1000
+strict c115 runs=5 symbols=34 real=-2.732 shuffled median=-5.082 max=-3.508 >=real 0/1000
+strict c121 runs=11 symbols=126 real=-3.073 shuffled median=-5.279 max=-4.146 >=real 0/1000
+strict c122 runs=10 symbols=59 real=-2.477 shuffled median=-5.025 max=-3.542 >=real 0/1000
+strict c139 runs=20 symbols=142 real=-2.761 shuffled median=-5.099 max=-4.025 >=real 0/1000
+strict c140 runs=7 symbols=56 real=-2.574 shuffled median=-5.156 max=-3.593 >=real 0/1000
+strict c146 runs=4 symbols=71 real=-3.129 shuffled median=-5.317 max=-4.221 >=real 0/1000
+strict c154 runs=2 symbols=27 real=-2.361 shuffled median=-5.290 max=-3.726 >=real 0/1000
