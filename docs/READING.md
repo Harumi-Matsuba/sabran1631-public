@@ -15,31 +15,31 @@
 | c100_31 | `lesenat` | le senat |
 | c100_32 | `ieleseecite` | ie les e[x]cite — 直した結果 x→pl で崩れた |
 | c100_35 | `auecmoy` | avec moy |
-| c100_37 | `permLetreunneida` | per… — 語にならない |
+| c100_37 | `permLetreunpeida` | per… — 語にならない |
 | c100_38 | `t(de)(et)` |  |
 
 ## f. 50v（Gallica btv1b9060193z f108）
 
 | ID | 鍵を当てた文字 | 区切り（推定を含む） |
 |---|---|---|
-| c108_17 | `desergeitmaioRd` |  |
-| c108_18 | `escdasteadydesadiienimyegartanii` |  |
+| c108_17 | `desergeitmaioRs` |  |
+| c108_18 | `escdasteadydesadiieeimyegartanii` |  |
 | c108_19 | `des` |  |
 | c108_20a | `iieiup` |  |
 | c108_20b | `deraid(en)lesplaces` | … de raid(en) les places |
 | c108_21a | `aeed` |  |
-| c108_21b | `eteeitcete` |  |
-| c108_22a | `leddtieueiememay` |  |
+| c108_21b | `eteeittete` |  |
+| c108_22a | `leddtiedeiememay` |  |
 | c108_22b | `sollI` |  |
-| c108_23 | `rietepaalesieurpaselsmselretene<?>de` |  |
+| c108_23 | `cietepaalesieurpaselsmselretene<?>de` |  |
 | c108_24 | `ilyeetoitdispose` | il … estoit dispose |
 | c108_25 | `enrdifrea<12>(de)(et)` |  |
-| c108_26 | `deuitgar` |  |
+| c108_26 | `deditgar` |  |
 | c108_27 | `aninmalaissemgsecretene(de)` | … malaisse … secret … |
 | c108_29 | `diartidice(de)` |  |
 | c108_30 | `<12>(de)<?>trete` |  |
 | c108_31 | `tramepcetafairere(de)sdrprise` | … faire re(de) s[u]rprise |
-| c108_32 | `giuuerietmiielicuiemait` |  |
+| c108_32 | `giduerietmiielicuiemait` |  |
 
 ## f. 54r（Gallica btv1b9060193z f115）
 
@@ -59,9 +59,9 @@
 |---|---|---|
 | c121_5 | `legareanin` |  |
 | c121_7 | `dumunitioneredesadine` | du munitionnaire de Sa… |
-| c121_21 | `saeamilie` |  |
+| c121_21 | `salamilip` | — |
 | c121_24 | `capitanuelutp` |  |
-| c121_27 | `predntlechastepau` |  |
+| c121_27 | `prehntlechastepau` |  |
 | c121_28 | `enmunitionere` | en munitionnaire |
 | c121_32 | `lecommis` | le commis |
 | c121_36 | `tiinere` |  |
@@ -79,7 +79,7 @@
 | c122_3 | `DPnice` |  |
 | c122_4 | `Sdenuit` |  |
 | c122_5 | `unsienFis` |  |
-| c122_6 | `assurersescimp` | assurer ses c[o]mp- |
+| c122_6 | `assurersescomp` | assurer ses comp- |
 | c122_7 | `agnons` | -agnons |
 
 ## f. 66r（Gallica btv1b9060193z f139）
@@ -90,7 +90,7 @@
 | c139_21a | `uestredescouueRte` | -vestre descouverte? |
 | c139_21b | `lonam` | l'on a m- |
 | c139_22 | `isprisoniersle<?>munitionereetd` | -is prisonniers le … munitionnaire et d- |
-| c139_23 | `eueauecluiuamenes` | -eux avec luy amenes |
+| c139_23 | `euxauecluiuamenes` | -eux avec luy amenes |
 | c139_23b | `esa<35>la<3i>` |  |
 | c139_23c | `secee` |  |
 | c139_24a | `t` |  |

@@ -21,23 +21,23 @@ class TestReading(unittest.TestCase):
 
     def test_known_words(self):
         out = run('src/decode.py', 'data/key.tsv', 'data/transcription.tsv')
-        for w in ['lescitadinsladesirent', 'donerlaplace', 'delintelligencedanscetetat', 'legeneraldespostes', 'largent']:
+        for w in ['lescitadinsladesirent', 'donerlaplace', 'delintelligencedanscetetat', 'legeneraldespostes', 'largent', 'assurersescomp']:
             self.assertIn(w, out)
 
     def test_valued_share(self):
         out = run('src/decode.py', 'data/key.tsv', 'data/transcription.tsv')
-        self.assertIn('symbols 897 valued 882 98.3%', out)
+        self.assertIn('symbols 891 valued 879 98.7%', out)
 
     def test_second_reading(self):
         out = run('src/compare.py', 'data/key.tsv', 'data/transcription.tsv',
                   'second/codex_pass1.txt', 'second/codex_pass2.txt', 'second/codex_pass3.txt')
-        self.assertIn('same name 831 (92.6%)', out)
-        self.assertIn('same name 826 (92.1%)', out)
-        self.assertIn('same name 790 (88.1%)', out)
+        self.assertIn('same name 823 (92.4%)', out)
+        self.assertIn('same name 824 (92.5%)', out)
+        self.assertIn('same name 826 (92.7%)', out)
 
     def test_calibration(self):
         out = run('src/calib.py', 'data/key.tsv', 'calib/lasry_plain.tsv', 'calib/transcription_f79.tsv')
-        self.assertIn('516/599 = 86.1%', out)
+        self.assertIn('551/599 = 92.0%', out)
 
 
 if __name__ == '__main__':

@@ -7,7 +7,7 @@
 - Key: George Lasry's reconstruction "BNF Francais 4134" (25/05/2022), published as an image on S. Tomokiyo's Cryptiana GL.htm, rewritten with sign names (shape-like labels) in `data/key.tsv`: 52 letter signs, 19 word numbers, 1 doubling sign. 0, 34 and 29 stand together in Lasry's table as "o- 34 29. ET"; we read all three as et (our interpretation).
 
 ## Transcription
-1. Each page was deskewed (the angle that makes the horizontal ink profile sharpest) and cut into lines. Only f. 54r was tilted (about 2°); its first cut mixed lines and it was recut after deskewing.
+1. Pages were cut into lines from the horizontal ink profile. Only f. 54r was tilted (about 2°); its first cut mixed lines and it was recut after deskewing.
 2. Claude transcribed the enlarged line images with sign names (`data/transcription_first.tsv`).
 
 ## Correcting disagreements from the images (corrections/)
@@ -19,13 +19,16 @@ OpenAI Codex transcribed the same line images without seeing our reading. Signs 
 | r2 | as r1; Codex's transcriptions made with the reference sheet attached | 17 |
 | r3, r4 | each sign cut out on its own, without context; positions given by Codex on line images with a pixel ruler | 16, 4 |
 | r5, r6 | as r3; the reference sheet extended with up to four examples per name from this scribe, taken from signs that we and Codex named alike | 5, 2 |
+| r7 | the 60 changes of r1–r6, each sign cut out again and judged as a two-way choice between 'before' and 'after' (which is which not shown); kept if both chose the same name, reverted to 'before' if they disagreed | 16 reverted (13 split, 3 both 'before') |
 
-Some corrections improved the reading (intelligence, commis, l'argent); some made it worse (f. 46v ie les excite → ieleseecite, f. 57v compagnons → cimpagnons, etc., see [OPEN.en.md](OPEN.en.md)). Agreement between two models does not remove all errors.
+Some corrections improved the reading (intelligence, commis, l'argent) and some made it worse. r7 restored compagnons, deux and others, but where both models again chose 'after', worse readings remain, e.g. f. 46v ie les excite → ieleseecite ([OPEN.en.md](OPEN.en.md)). Agreement between two models does not remove all errors.
 
 ## Independent second reading (second/)
-After the last correction, Codex transcribed the lines three times in fresh contexts, given only the 116 line images, the two reference sheets (key signs and this scribe's examples) and the sign-name list (`second/PROMPT.md`); no values, no reading, no key, no judgements. Each run's log contains a single reply and no command execution or file reading.
+After the last correction, Codex transcribed the lines three times in fresh contexts, given only the 116 line images, three reference sheets (key signs and up to eight examples per sign from this scribe, spread over the pages) and the sign-name list (`second/PROMPT.md`); no values, no reading, no key, no judgements. Each run's log contains a single reply and no command execution or file reading.
 
-Agreement = share of our signs inside matching blocks of the per-line sign sequences (`src/compare.py`): 92.6%, 92.1%, 88.1% overall. The README gives, per leaf, the lowest of the three runs. In run 3 Codex wrote r for most pl on f. 50v, bringing that leaf to 76.2%.
+Agreement = share of our signs inside matching blocks of the per-line sign sequences (`src/compare.py`): 92.2%, 92.3%, 92.5% overall. The README gives, per leaf, the lowest of the three runs.
+
+The same final transcription read three times with the earlier sheet (up to four examples) gave 92.1%, 86.5%, 86.4% (`second/earlier_sheet_*`). In those runs Codex sometimes switched a name throughout a run (every pl on f. 50v written r, every S on other leaves written f); this is why the examples were increased. Taking the lowest over those runs too, the per-leaf minima are f. 50v 72.1%, f. 57v 81.2%, f. 54r 81.8%, f. 66r 84.6%.
 
 The comparisons used to make corrections (the rounds above) are not called independent.
 
@@ -35,24 +38,31 @@ The comparisons used to make corrections (the rounds above) are not called indep
 ## Calibration (calib/)
 No contemporary decipherment was found on the leaves examined in this volume. We used BnF Baluze 155 f. 79 (Gallica btv1b9001401d f163), 17 cipher lines deciphered by Lasry with the same key. His decipherment (red overlay in the GL.htm images) was transcribed into `calib/lasry_plain.tsv` (599 letters; signs he left without a value are omitted).
 
-| Procedure | Agreement |
+The leaf was read with the same procedure as this volume:
+1. First transcription: a Claude Opus instance that had not seen Lasry's decipherment was given only the key image, the list of sign names and the 51 line images (`calib/opus_first.tsv`, prompt `calib/opus_first_PROMPT.md`). Its log shows it opened no other files.
+2. The same seven judging rounds as r1–r7 of this volume, with Codex and Claude Sonnet (`calib/opus_rounds/`). The Codex transcriptions used to find disagreements were made with the same kinds of prompt (no sheet, sheet, sheet with examples).
+
+| Stage | Agreement |
 |---|---|
-| Claude Sonnet transcription (blind, with the reference sheet) | 78.6% |
-| + judging in context (Codex and Sonnet, as r1; 36 changed) | 82.5% |
-| + single-sign judging (as r3; 37 changed) | 86.1% |
-| + single-sign judging with scribe examples (as r5; 2 changed) | **86.1%** (`calib/transcription_f79.tsv`) |
-| For reference: Codex only (sheet with examples), 3 runs | 87.0%, 82.6%, 88.3% |
+| First transcription (Claude Opus, blind) | 90.2% |
+| r1, r2 judging in context (36, 31 changed) | 91.0%, 91.5% |
+| r3, r4 single-sign judging (7, 3 changed) | 92.2%, 91.7% |
+| r5, r6 single-sign judging with scribe examples (4, 0 changed) | 92.0%, 92.0% |
+| r7 two-way re-judging of changes (16 reverted) | **92.0%** (`calib/transcription_f79.tsv`) |
+| For reference: Codex only (sheet with eight examples), 3 runs | 83.5%, 85.1%, 87.3% |
 
-**Differences from the procedure on the target leaves** (their effect on the figure was not measured):
-- First transcriber: Claude Opus (the author of this repository) for the target, Claude Sonnet for the calibration leaf. Opus had seen the answer (Lasry's decipherment) and so could not transcribe the calibration leaf blind.
-- Number of rounds: target 2 context rounds + 4 single-sign rounds; calibration 1 + 2. On the target the number of changes fell round by round (26, 17, 16, 4, 5, 2).
-- Scribe examples: taken from the fr. 4134 hand. Baluze 155 f. 79 is in another hand, so they were presented as "another scribe's examples".
-- The calibration leaf was not deskewed.
+Remaining differences:
+- The scribe examples on the reference sheet come from the fr. 4134 hand; Baluze 155 f. 79 is in another hand, so they were presented as "another scribe's examples".
+- The Claude Opus that made the first transcription of this volume knew the key values while working; the calibration Opus was also given the key image with values.
+- Neither was deskewed, apart from f. 54r.
 
-86.1% is therefore given as an approximation of the accuracy of the target procedure. The table shows that judging raises Sonnet's 78.6%, and that Codex alone varies between 82.6% and 88.3%.
+**Earlier route (for reference):** with Claude Sonnet as first transcriber the figures were 78.6% (as transcribed) → 82.5% → 86.1% → 84.6% (after the two-way round) (`calib/sonnet_route_*`, `calib/r1_context.tsv` etc.). The first transcriber has a large effect on the final figure.
+
+## Scope of the transcription
+Runs of cipher signs were transcribed. Isolated codes written between dots in the plain text (. H., .12. etc.) and text struck out by the writer are not included.
 
 ## Valued share
-`src/decode.py` counts the signs whose name is in the key (882 of 897, 98.3%). Stretches that have values but form no words are marked in READING and OPEN.
+`src/decode.py` counts the signs whose name is in the key (879 of 891, 98.7%). Stretches that have values but form no words are marked in READING and OPEN.
 
 ## Limits
 - No human has checked the transcription.
